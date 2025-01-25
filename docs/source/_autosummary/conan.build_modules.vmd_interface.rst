@@ -30,6 +30,6 @@ vmd\_interface
         :template: module-template.rst
         :recursive:
                 
-                ~conan.build_modules.vmd_interface.vmd_interface
+                ~vmd_interface
         
     

@@ -30,10 +30,10 @@
         :template: module-template.rst
         :recursive:
                 
-                ~conan.CONAN
-                ~conan.analysis_modules
-                ~conan.build_modules
-                ~conan.defdict
-                ~conan.simbox
+                ~CONAN
+                ~analysis_modules
+                ~build_modules
+                ~defdict
+                ~simbox
         
     

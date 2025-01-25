@@ -2,14 +2,14 @@
 
 # -- Project information
 
-import conan
+#import conan
 
 project = "CONAN"
 copyright = "2023, Kirchner Group"
 author = "Leonard Dick"
 
 release = "1.0.0"
-version = conan.VERSION
+version = "1.1"#conan.VERSION
 
 # -- General configuration
 
@@ -20,6 +20,9 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
 ]
+
+exclude_patterns = ["**/conan/**"]
+
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
