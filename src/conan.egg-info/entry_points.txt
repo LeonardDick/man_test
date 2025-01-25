@@ -1,0 +1,2 @@
+[console_scripts]
+CONAN = conan.CONAN:main
