@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible Volume &mdash; CONAN 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Density Profiles" href="dens_prof.html" />
+    <link rel="prev" title="Molecule Identifier" href="mol_ident.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CONAN
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../first_steps/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_steps/input_output.html">Input &amp; Output</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation Setup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_setup/builder.html">Build module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_setup/simulation_box.html">Simulation Box Generator</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Trajectory analysis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="picture_mode.html">Picture mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mol_ident.html">Molecule Identifier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Accessible Volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dens_prof.html">Density Profiles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/versions.html">Versions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CONAN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Accessible Volume</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/analysis/acc_volume.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="accessible-volume">
+<h1>Accessible Volume<a class="headerlink" href="#accessible-volume" title="Link to this heading"></a></h1>
+<p>The accessible volume is obtained by scanning the whole trajectory to identify the atom which is furthest displaced from the center line of the CNT, while adding either the van der Waals radius or the covalent radius of the given element to the calculated distance.
+The accessible volume <span class="math notranslate nohighlight">\(V_{acc}\)</span> is then calculated by simplifying the CNT to be a cylinder, using the following equation:</p>
+<div class="math notranslate nohighlight">
+\[V_{acc} = \pi*r_{acc}^2*l_{CNT}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_{acc}\)</span> is the radius of the atom which is furthest displaced from the center line of the CNT. <span class="math notranslate nohighlight">\(l_{CNT}\)</span> is the length of a given CNT.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The accessible volume is therefore depending on the most displaced atom and not directly derived by the CNTs diameter.
+Results can thus slightly differ for varying simulations with the same CNT, and a large sampling is recommended to yield the best results.</p>
+</div>
+<p>The calculated volumes can be used for further analysis e.g. the axial density profile calculation.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mol_ident.html" class="btn btn-neutral float-left" title="Molecule Identifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dens_prof.html" class="btn btn-neutral float-right" title="Density Profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kirchner Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

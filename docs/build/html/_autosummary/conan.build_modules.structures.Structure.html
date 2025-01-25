@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structure &mdash; CONAN 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Structure1d" href="conan.build_modules.structures.Structure1d.html" />
+    <link rel="prev" title="Pore" href="conan.build_modules.structures.Pore.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CONAN
+          </a>
+              <div class="version">
+                1.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../first_steps/Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first_steps/input_output.html">Input &amp; Output</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Simulation Setup</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_setup/builder.html">Build module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../simulation_setup/simulation_box.html">Simulation Box Generator</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Trajectory analysis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/analysis.html">General Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/picture_mode.html">Picture mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/mol_ident.html">Molecule Identifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/acc_volume.html">Accessible Volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/dens_prof.html">Density Profiles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../other/versions.html">Versions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="conan.html">conan</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="conan.CONAN.html">CONAN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conan.analysis_modules.html">analysis_modules</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="conan.build_modules.html">build_modules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="conan.build_modules.build_main.html">build_main</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conan.build_modules.build_utils.html">build_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conan.build_modules.input_handler.html">input_handler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conan.build_modules.interpreter.html">interpreter</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="conan.build_modules.structures.html">structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="conan.build_modules.vmd_interface.html">vmd_interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conan.defdict.html">defdict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="conan.simbox.html">simbox</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CONAN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API</a></li>
+          <li class="breadcrumb-item"><a href="conan.html">conan</a></li>
+          <li class="breadcrumb-item"><a href="conan.build_modules.html">build_modules</a></li>
+          <li class="breadcrumb-item"><a href="conan.build_modules.structures.html">structures</a></li>
+      <li class="breadcrumb-item active">Structure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_autosummary/conan.build_modules.structures.Structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="structure">
+<h1>Structure<a class="headerlink" href="#structure" title="Link to this heading"></a></h1>
+<dl class="py class" id="id1">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">conan.build_modules.structures.</span></span><span class="sig-name descname"><span class="pre">Structure</span></span><a class="headerlink" href="#conan.build_modules.structures.Structure" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<p>Represents a molecular structure. This class serves as a base for managing molecular data, designed to be abstract
+to support specific structure types derived from it.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>_structure_df (pd.DataFrame): DataFrame containing the structure data.
+group_list (List[FunctionalGroup]): List of functional groups within the structure.</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>()</p></td>
+<td><p>Initializes a Structure instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#conan.build_modules.structures.Structure.add" title="conan.build_modules.structures.Structure.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(parameters)</p></td>
+<td><p>Adds a functional group to the structure at a specified position, modifying the chemical properties.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#conan.build_modules.structures.Structure.print_xyz_file" title="conan.build_modules.structures.Structure.print_xyz_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_xyz_file</span></code></a>(file_name)</p></td>
+<td><p>Prints the structure to an XYZ file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#conan.build_modules.structures.Structure.remove_atom_by_index" title="conan.build_modules.structures.Structure.remove_atom_by_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_atom_by_index</span></code></a>(index)</p></td>
+<td><p>Removes an atom from the structure by its index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#conan.build_modules.structures.Structure.rotation_matrix_from_vectors" title="conan.build_modules.structures.Structure.rotation_matrix_from_vectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rotation_matrix_from_vectors</span></code></a>(vec1, vec2)</p></td>
+<td><p>Computes a rotation matrix to align the first vector (vec1, defaulting to the z-axis [0, 0, 1]) with a second vector (vec2).</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure._add_group_on_position">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_add_group_on_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selected_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.13)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#conan.build_modules.structures.Structure._add_group_on_position" title="Link to this definition"></a></dt>
+<dd><p>Adds a functional group to the structure at a specified position, with automatic adjustment to ensure proper
+orientation based on the local surface normal. This method ensures that the child classes implement this
+functionality.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>selected_position (List[float]): Coordinates [x, y, z] where the group should be added.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure._initialize_functional_groups">
+<span class="sig-name descname"><span class="pre">_initialize_functional_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.13)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#conan.build_modules.structures.Structure._initialize_functional_groups" title="Link to this definition"></a></dt>
+<dd><p>Initializes functional groups based on the given parameters.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>parameters (Dict[str, Union[str, int, float]]): The parameters for the functional groups.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure._write_xyz_file">
+<span class="sig-name descname"><span class="pre">_write_xyz_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#conan.build_modules.structures.Structure._write_xyz_file" title="Link to this definition"></a></dt>
+<dd><p>Writes the structure to an XYZ file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name_output (str): The name of the output file.
+coordinates (pd.DataFrame): The coordinates to write.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure.add">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.13)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#conan.build_modules.structures.Structure.add" title="Link to this definition"></a></dt>
+<dd><p>Adds a functional group to the structure at a specified position, modifying the chemical properties. This method
+ensures that the child classes implement this functionality.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>parameters (Dict[str, Union[str, int, float]]): The parameters for the addition.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure.print_xyz_file">
+<span class="sig-name descname"><span class="pre">print_xyz_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#conan.build_modules.structures.Structure.print_xyz_file" title="Link to this definition"></a></dt>
+<dd><p>Prints the structure to an XYZ file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_name (str): The name of the file to write to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure.remove_atom_by_index">
+<span class="sig-name descname"><span class="pre">remove_atom_by_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#conan.build_modules.structures.Structure.remove_atom_by_index" title="Link to this definition"></a></dt>
+<dd><p>Removes an atom from the structure by its index.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>index (int): The index of the atom to remove.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="conan.build_modules.structures.Structure.rotation_matrix_from_vectors">
+<span class="sig-name descname"><span class="pre">rotation_matrix_from_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">_ScalarType_co</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">_ScalarType_co</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">_ScalarType_co</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#conan.build_modules.structures.Structure.rotation_matrix_from_vectors" title="Link to this definition"></a></dt>
+<dd><p>Computes a rotation matrix to align the first vector (vec1, defaulting to the z-axis [0, 0, 1]) with a second
+vector (vec2).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>vec2 (np.ndarray): The target vector to align with the z-axis.</p>
+</dd>
+<dt>Returns:</dt><dd><p>np.ndarray: The rotation matrix that when multiplied by vec1 results in vec2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="conan.build_modules.structures.Pore.html" class="btn btn-neutral float-left" title="Pore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="conan.build_modules.structures.Structure1d.html" class="btn btn-neutral float-right" title="Structure1d" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Kirchner Group.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
