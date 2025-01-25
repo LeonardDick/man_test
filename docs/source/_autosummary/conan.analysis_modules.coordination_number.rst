@@ -1,4 +1,4 @@
-coordination\_number
+﻿coordination\_number
 ====================
 
 
@@ -10,31 +10,9 @@ coordination\_number
 
     
         
-    .. rubric:: Functions
-
-    .. autosummary::
-        :toctree:
-        :template: function-template.rst
-                
-                    ~coordination_number_analysis
-        
     
 
     
-        
-            
-    .. rubric:: CoordinationNumberAnalysis
-
-    .. _CoordinationNumberAnalysis:
-    .. autoclass:: CoordinationNumberAnalysis
-        :members:
-        :private-members:
-        :show-inheritance:
-
-                    
-
-                        
-                    
         
     
 

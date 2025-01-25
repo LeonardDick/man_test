@@ -1,4 +1,4 @@
-FunctionalGroup
+﻿FunctionalGroup
 ===============
 
 .. currentmodule:: conan.build_modules.structures
@@ -11,13 +11,6 @@ FunctionalGroup
 
    
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~FunctionalGroup.__init__
-      ~FunctionalGroup.remove_anchors
    
    
 

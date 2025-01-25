@@ -1,4 +1,4 @@
-vmd\_interface
+﻿vmd\_interface
 ==============
 
 
@@ -9,16 +9,6 @@ vmd\_interface
     
 
     
-        
-    .. rubric:: Functions
-
-    .. autosummary::
-        :toctree:
-        :template: function-template.rst
-                
-                    ~send_command
-                    ~start_vmd
-                    ~update_structure
         
     
 

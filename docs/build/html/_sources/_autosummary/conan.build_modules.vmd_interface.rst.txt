@@ -1,4 +1,4 @@
-vmd\_interface
+﻿vmd\_interface
 ==============
 
 
@@ -22,14 +22,5 @@ vmd\_interface
     
 
     
-        
-    .. rubric:: Modules
-
-    .. autosummary::
-        :toctree:
-        :template: module-template.rst
-        :recursive:
-                
-                ~vmd_interface
         
     

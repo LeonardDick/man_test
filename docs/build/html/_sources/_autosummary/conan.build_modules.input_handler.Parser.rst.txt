@@ -1,4 +1,4 @@
-Parser
+﻿Parser
 ======
 
 .. currentmodule:: conan.build_modules.input_handler
@@ -11,13 +11,6 @@ Parser
 
    
 
-   
-   .. rubric:: Methods
-
-   .. autosummary::
-   
-      ~Parser.__init__
-      ~Parser.parse
    
    
 
