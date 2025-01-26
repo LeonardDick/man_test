@@ -2,14 +2,14 @@
 
 # -- Project information
 
-import conan
+# import conan
 
 project = "CONAN"
 copyright = "2023, Kirchner Group"
 author = "Leonard Dick"
 
 release = "1.0.0"
-version = conan.VERSION
+version = "1.0.0" # conan.VERSION
 
 # -- General configuration
 
@@ -28,6 +28,10 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ["std"]
 
 templates_path = ["_templates"]
+
+# exclude the "conan" folder completely and all files within 
+
+exclude_patterns = ['**/conan/**']
 
 # -- Options for HTML output
 
