@@ -4,6 +4,9 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
+  commands:
+    - pip install conan
+    - conan install . --install-folder build
 
 python:
   install:
@@ -11,8 +14,3 @@ python:
 
 sphinx:
   configuration: docs/source/conf_rtd.py
-
-build:
-  commands:
-    - pip install conan
-    - conan install . --install-folder build
