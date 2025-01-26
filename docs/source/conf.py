@@ -31,7 +31,7 @@ templates_path = ["_templates"]
 
 # exclude the "conan" folder completely and all files within 
 
-exclude_patterns = ['**/conan/**']
+# exclude_patterns = ['**/conan/**']
 
 # -- Options for HTML output
 
