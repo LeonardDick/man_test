@@ -1,21 +1,21 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installation &mdash; CONAN 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
-
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-      <script src="../_static/jquery.js?v=5d32c60e"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=8d563738"></script>
-      <script src="../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=af2ce170"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,6 +34,9 @@
           <a href="../index.html" class="icon icon-home">
             CONAN
           </a>
+              <div class="version">
+                1.0.1
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -104,17 +107,17 @@
            <div itemprop="articleBody">
              
   <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <p>To install CONAN, simply clone the public repository to your machine using GitHub.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/kirchners-manta/conan.git
 </pre></div>
 </div>
 <p>The code supports Python versions 3.10 to 3.12. Multiple libraries need to be installed to run the code, which are listed in the <cite>pyproject.toml</cite> file.</p>
 <section id="setting-up-an-environment">
-<h2>Setting up an Environment<a class="headerlink" href="#setting-up-an-environment" title="Link to this heading"></a></h2>
+<h2>Setting up an Environment<a class="headerlink" href="#setting-up-an-environment" title="Permalink to this heading"></a></h2>
 <p>To ensure a clean and isolated installation, it is recommended to use an environment. You can use either <cite>conda</cite> or <cite>venv</cite> for this purpose.</p>
 <section id="using-conda-preferred">
-<h3>Using conda (preferred)<a class="headerlink" href="#using-conda-preferred" title="Link to this heading"></a></h3>
+<h3>Using conda (preferred)<a class="headerlink" href="#using-conda-preferred" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p><strong>Create a new conda environment</strong>:</p>
 <blockquote>
@@ -127,7 +130,7 @@ conda activate conan
 </ul>
 </section>
 <section id="using-venv-python-s-built-in-virtual-environment">
-<h3>Using venv (Python’s built-in virtual environment)<a class="headerlink" href="#using-venv-python-s-built-in-virtual-environment" title="Link to this heading"></a></h3>
+<h3>Using venv (Python’s built-in virtual environment)<a class="headerlink" href="#using-venv-python-s-built-in-virtual-environment" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p><strong>Create a new virtual environment</strong>:</p>
 <blockquote>
@@ -141,14 +144,14 @@ source conan-env/bin/activate
 </section>
 </section>
 <section id="id1">
-<h2>Installation<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>Installation<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>Once the environment is set up, you can proceed with the installation:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install .
 </pre></div>
 </div>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
 <p>Now the code is ready to be used. To start the program, simply run the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CONAN
 </pre></div>
@@ -158,7 +161,7 @@ A log file will be written called <code class="docutils literal notranslate"><sp
 For certain modules, additional files might be created (e.g., a csv file for the results of the analysis).</p>
 </section>
 <section id="further-information">
-<h2>Further Information<a class="headerlink" href="#further-information" title="Link to this heading"></a></h2>
+<h2>Further Information<a class="headerlink" href="#further-information" title="Permalink to this heading"></a></h2>
 <p>For more details on setting up virtual environments, refer to the official documentation:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Conda Documentation</a></p></li>

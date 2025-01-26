@@ -1,4 +1,4 @@
-﻿COMCalculation
+COMCalculation
 ==============
 
 .. currentmodule:: conan.analysis_modules.velocity
@@ -11,6 +11,14 @@
 
    
 
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~COMCalculation.__init__
+      ~COMCalculation.calculate_COM
+      ~COMCalculation.unwrap_coordinates
    
    
 

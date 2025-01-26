@@ -1,4 +1,4 @@
-﻿CONAN
+CONAN
 =====
 
 
@@ -9,6 +9,14 @@
     
 
     
+        
+    .. rubric:: Functions
+
+    .. autosummary::
+        :toctree:
+        :template: function-template.rst
+                
+                    ~main
         
     
 

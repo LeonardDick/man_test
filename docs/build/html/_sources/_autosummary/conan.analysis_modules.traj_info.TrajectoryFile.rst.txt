@@ -1,4 +1,4 @@
-﻿TrajectoryFile
+TrajectoryFile
 ==============
 
 .. currentmodule:: conan.analysis_modules.traj_info
@@ -11,6 +11,18 @@
 
    
 
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~TrajectoryFile.__init__
+      ~TrajectoryFile.frame_comparison
+      ~TrajectoryFile.get_file_type
+      ~TrajectoryFile.get_frame
+      ~TrajectoryFile.get_num_atoms
+      ~TrajectoryFile.simbox_dimension
+      ~TrajectoryFile.traj_chunk_info
    
    
 

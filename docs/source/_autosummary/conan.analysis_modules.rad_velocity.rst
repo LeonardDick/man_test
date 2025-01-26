@@ -1,4 +1,4 @@
-﻿rad\_velocity
+rad\_velocity
 =============
 
 
@@ -10,9 +10,31 @@
 
     
         
+    .. rubric:: Functions
+
+    .. autosummary::
+        :toctree:
+        :template: function-template.rst
+                
+                    ~radial_velocity_analysis
+        
     
 
     
+        
+            
+    .. rubric:: VelocityAnalysis
+
+    .. _VelocityAnalysis:
+    .. autoclass:: VelocityAnalysis
+        :members:
+        :private-members:
+        :show-inheritance:
+
+                    
+
+                        
+                    
         
     
 

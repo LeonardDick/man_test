@@ -2,12 +2,14 @@
 
 # -- Project information
 
+import conan
+
 project = "CONAN"
 copyright = "2023, Kirchner Group"
 author = "Leonard Dick"
 
 release = "1.0.0"
-version = "1.1"
+version = conan.VERSION
 
 # -- General configuration
 
@@ -18,11 +20,6 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
 ]
-
-exclude_patterns = ["**/src**", "**/structures**", "tests"]
-
-# Mock the conan module
-autodoc_mock_imports = ["conan"]
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
