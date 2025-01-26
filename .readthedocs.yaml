@@ -6,7 +6,6 @@ build:
     python: "3.10"
   commands:
     - pip install conan
-    - conan install . --install-folder build
 
 python:
   install:
