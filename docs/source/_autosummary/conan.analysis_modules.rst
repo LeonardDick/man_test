@@ -31,6 +31,7 @@ analysis\_modules
         :recursive:
                 
                 ~conan.analysis_modules.axial_dens
+                ~conan.analysis_modules.cnt_fill
                 ~conan.analysis_modules.coordination_number
                 ~conan.analysis_modules.msd
                 ~conan.analysis_modules.rad_dens

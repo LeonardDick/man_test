@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Density Profiles &mdash; CONAN 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=af2ce170"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -102,9 +104,9 @@
            <div itemprop="articleBody">
              
   <section id="density-profiles">
-<h1>Density Profiles<a class="headerlink" href="#density-profiles" title="Permalink to this heading"></a></h1>
+<h1>Density Profiles<a class="headerlink" href="#density-profiles" title="Link to this heading"></a></h1>
 <section id="radial-denstity">
-<h2>Radial Denstity<a class="headerlink" href="#radial-denstity" title="Permalink to this heading"></a></h2>
+<h2>Radial Denstity<a class="headerlink" href="#radial-denstity" title="Link to this heading"></a></h2>
 <p>Compute the radial density profile of the liquid inside the pore structure.
 The pore is automatically identified in the trajectory and subdivided into the wall and the CNT part.
 With the center line of the CNT set as the origin, the space around the center is cut into increments of the users’ choice, up to the tubes’ wall.
@@ -117,7 +119,7 @@ The raw data is saved as <code class="docutils literal notranslate"><span class=
 The analysis can be performed individually for all unique molecules and atoms.</p>
 </section>
 <section id="axial-density-profile">
-<h2>Axial Density Profile<a class="headerlink" href="#axial-density-profile" title="Permalink to this heading"></a></h2>
+<h2>Axial Density Profile<a class="headerlink" href="#axial-density-profile" title="Link to this heading"></a></h2>
 <p>Compute an axial density profile over the whole simulation box. The pore has to be oriented along the z axis to use this analysis.
 Again, as for the radial density, the CNT and all carbon structures are identified automatically in the trajectory.
 The volume of the CNT is either calculated with the accessible radius <span class="math notranslate nohighlight">\(r_{acc}\)</span>, which is computed on the fly (see accessible volume) or with the radius <span class="math notranslate nohighlight">\(r_{CNT}\)</span> of the CNT.

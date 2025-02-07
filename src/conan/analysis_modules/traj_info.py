@@ -79,7 +79,7 @@ class TrajectoryFile:
     def simbox_dimension(self):
 
         if self.file_type == "xyz":
-            ddict.printLog("Enter the dimensions of the simulation box [\u00C5]:")
+            ddict.printLog("Enter the dimensions of the simulation box [\u00c5]:")
             simbox_x = float(ddict.get_input("[X]   ", self.args, "float"))
             simbox_y = float(ddict.get_input("[Y]   ", self.args, "float"))
             simbox_z = float(ddict.get_input("[Z]   ", self.args, "float"))
@@ -112,7 +112,7 @@ class TrajectoryFile:
 
         box_size = (simbox_x, simbox_y, simbox_z)
         ddict.printLog(
-            f"The simulation box dimensions are [\u00C5]: {float(box_size[0]):.3f} x {float(box_size[1]):.3f} x "
+            f"The simulation box dimensions are [\u00c5]: {float(box_size[0]):.3f} x {float(box_size[1]):.3f} x "
             f"{float(box_size[2]):.3f}"
         )
 
@@ -247,7 +247,7 @@ class TrajectoryFile:
 
         # Calculate how many bytes each line of the trajectory file has.
         bytes_per_line = trajectory_file_size / (number_of_lines)
-        # The number of lines in a chunk. Each chunk is roughly 50 MB large.
+        # The number of frames in a chunk. Each chunk is roughly 50 MB large.
         chunk_size = int(100000000 / ((self.lines_per_frame) * bytes_per_line))
         # The number of chunks (always round up).
         number_of_chunks = math.ceil(number_of_frames / chunk_size)
@@ -670,10 +670,10 @@ class Molecule:
         if structure_frame.empty or traj_file.args["manual"]:
             if structure_frame.empty:
                 ddict.printLog(
-                    "No structures were found in the simulation box. \n",
+                    "No frozen structures were found in the simulation box. \n",
                     color="red",
                 )
-            define_struc = ddict.get_input("Manually define the structures? [y/n]: ", traj_file.args, "str")
+            define_struc = ddict.get_input("Manually define structures? [y/n]: ", traj_file.args, "str")
             if define_struc == "n":
                 sys.exit()
             else:
@@ -737,6 +737,7 @@ class Molecule:
                 )
 
                 # Change the structure column to pore{i}
+                structure_frame_copy["Struc"] = structure_frame_copy["Struc"].astype(str)
                 structure_frame_copy.loc[structure_frame["Molecule"] == molecule, "Struc"] = f"Pore{counter_pore}"
                 CNTs.append(f"Pore{counter_pore}")
 
@@ -748,21 +749,22 @@ class Molecule:
                     f"(Species: {structure_frame.loc[structure_frame['Molecule'] == molecule, 'Species'].unique()})"
                 )
                 if (x_max - x_min) < 1.0:
-                    ddict.printLog(f"The wall extends in yz direction at x = {x_min:.2f} \u00C5.\n")
+                    ddict.printLog(f"The wall extends in yz direction at x = {x_min:.2f} \u00c5.\n")
                 if (y_max - y_min) < 1.0:
-                    ddict.printLog(f"The wall extends in xz direction at y = {y_min:.2f} \u00C5.\n")
+                    ddict.printLog(f"The wall extends in xz direction at y = {y_min:.2f} \u00c5.\n")
                 if (z_max - z_min) < 1.0:
-                    ddict.printLog(f"The wall extends in xy direction at z = {z_min:.2f} \u00C5.\n")
+                    ddict.printLog(f"The wall extends in xy direction at z = {z_min:.2f} \u00c5.\n")
                     Walls_positions.append(z_min)
                 structure_frame_copy.loc[structure_frame["Molecule"] == molecule, "Struc"] = f"Wall{counter_wall}"
                 Walls.append(f"Wall{counter_wall}")
 
         # Copy the structure frame back to the original structure frame.
         structure_frame = structure_frame_copy
+        traj_file.frame0["Struc"] = traj_file.frame0["Struc"].astype(structure_frame["Struc"].dtype)
         traj_file.frame0.loc[structure_frame.index, "Struc"] = structure_frame["Struc"]
 
         # Exchange all the entries in the 'Struc' column saying 'False' with 'Liquid'.
-        traj_file.frame0["Struc"].replace(False, "Liquid", inplace=True)
+        traj_file.frame0.replace({"Struc": {False: "Liquid"}}, inplace=True)
 
         # Print the structure information .
         ddict.printLog(f"\nTotal number of structures: {len(molecules_struc)}")
@@ -771,7 +773,9 @@ class Molecule:
 
         if len(CNTs) > 0:
             CNT_pore_question = ddict.get_input(
-                "Does one of the pores contain rigid CNTs? [y/n]: ", traj_file.args, "str"
+                "Does one of the pores contain rigid CNTs along the z axis of the simulation box? [y/n]: ",
+                traj_file.args,
+                "str",
             )
             if CNT_pore_question == "y":
                 if len(CNTs) == 0:
@@ -805,7 +809,7 @@ class Molecule:
             if length_pore[i - 1] > traj_file.box_size[2] - 2.0:
                 length_pore[i - 1] = traj_file.box_size[2]
                 ddict.printLog(f"Pore{i} is considered infinite in z direction.")
-            ddict.printLog(f"The length of Pore{i} is {length_pore[i - 1]:.2f} \u00C5.")
+            ddict.printLog(f"The length of Pore{i} is {length_pore[i - 1]:.2f} \u00c5.")
 
             # The center of each pore is the average of the minimum and maximum z coordinate.
             center_pore.append((max_z_pore[i - 1] + min_z_pore[i - 1]) / 2)
@@ -827,7 +831,7 @@ class Molecule:
             ddict.printLog(
                 (
                     f"The center of the CNT in Pore{i} is at "
-                    f"{x_center:.2f}, {y_center:.2f}, {center_pore[i - 1]:.2f}) \u00C5."
+                    f"{x_center:.2f}, {y_center:.2f}, {center_pore[i - 1]:.2f}) \u00c5."
                 )
             )
             # Combine the x, y and z centers to a numpy array.
@@ -837,7 +841,7 @@ class Molecule:
             # Calculate the radius of the CNT_ring.
             tuberadius = np.sqrt((CNT_ring.iloc[0]["x"] - x_center) ** 2 + (CNT_ring.iloc[0]["y"] - y_center) ** 2)
             tuberadii.append(tuberadius)
-            ddict.printLog(f"The radius of the CNT in Pore{i} is {tuberadius:.2f} \u00C5.\n")
+            ddict.printLog(f"The radius of the CNT in Pore{i} is {tuberadius:.2f} \u00c5.\n")
 
             # Calculate the xy-distance of the centerpoint of the CNT to all pore atoms.
             # If they are smaller/equal as the tuberadius, they belong to the CNT.
@@ -864,7 +868,7 @@ class Molecule:
         if "CNT" not in traj_file.frame0.columns:
             traj_file.frame0["CNT"] = None
 
-        # creat a CNT_atoms dataframe with just the CNT atoms (value in the 'CNT' column is larger than 0.)
+        # create a CNT_atoms dataframe with just the CNT atoms (value in the 'CNT' column is larger than 0.)
 
         CNT_atoms = traj_file.frame0[traj_file.frame0["CNT"] > 0].copy()
 

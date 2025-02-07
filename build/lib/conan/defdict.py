@@ -1,6 +1,6 @@
 # The program is written by Leonard Dick, 2023
 
-""" This file contains all globally needed functions and dictionaries."""
+"""This file contains all globally needed functions and dictionaries."""
 
 # MODULES
 import argparse
@@ -131,7 +131,7 @@ def dict_vdW() -> dict:
         "Au": 1.66,
         "D": 0.00,
         "X": 0.00,
-    }  # 'Na = 2.27'
+    }
     return elem_vdW
 
 
