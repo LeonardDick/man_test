@@ -48,15 +48,10 @@ Check out :doc:`first_steps/Installation` for more information on how to install
    analysis/mol_ident
    analysis/acc_volume
    analysis/dens_prof
+   analysis/Coordination_number
 
 .. toctree::
    :caption: Other
    :maxdepth: 2
 
    other/versions
-
-.. toctree::
-    :caption: API
-    :maxdepth: 2
-
-    api

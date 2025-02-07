@@ -247,7 +247,7 @@ class TrajectoryFile:
 
         # Calculate how many bytes each line of the trajectory file has.
         bytes_per_line = trajectory_file_size / (number_of_lines)
-        # The number of frames in a chunk. Each chunk is roughly 50 MB large.
+        # The number of lines in a chunk. Each chunk is roughly 50 MB large.
         chunk_size = int(100000000 / ((self.lines_per_frame) * bytes_per_line))
         # The number of chunks (always round up).
         number_of_chunks = math.ceil(number_of_frames / chunk_size)
@@ -670,10 +670,10 @@ class Molecule:
         if structure_frame.empty or traj_file.args["manual"]:
             if structure_frame.empty:
                 ddict.printLog(
-                    "No frozen structures were found in the simulation box. \n",
+                    "No structures were found in the simulation box. \n",
                     color="red",
                 )
-            define_struc = ddict.get_input("Manually define structures? [y/n]: ", traj_file.args, "str")
+            define_struc = ddict.get_input("Manually define the structures? [y/n]: ", traj_file.args, "str")
             if define_struc == "n":
                 sys.exit()
             else:
@@ -737,7 +737,6 @@ class Molecule:
                 )
 
                 # Change the structure column to pore{i}
-                structure_frame_copy["Struc"] = structure_frame_copy["Struc"].astype(str)
                 structure_frame_copy.loc[structure_frame["Molecule"] == molecule, "Struc"] = f"Pore{counter_pore}"
                 CNTs.append(f"Pore{counter_pore}")
 
@@ -760,11 +759,10 @@ class Molecule:
 
         # Copy the structure frame back to the original structure frame.
         structure_frame = structure_frame_copy
-        traj_file.frame0["Struc"] = traj_file.frame0["Struc"].astype(structure_frame["Struc"].dtype)
         traj_file.frame0.loc[structure_frame.index, "Struc"] = structure_frame["Struc"]
 
         # Exchange all the entries in the 'Struc' column saying 'False' with 'Liquid'.
-        traj_file.frame0.replace({"Struc": {False: "Liquid"}}, inplace=True)
+        traj_file.frame0["Struc"].replace(False, "Liquid", inplace=True)
 
         # Print the structure information .
         ddict.printLog(f"\nTotal number of structures: {len(molecules_struc)}")
@@ -773,9 +771,7 @@ class Molecule:
 
         if len(CNTs) > 0:
             CNT_pore_question = ddict.get_input(
-                "Does one of the pores contain rigid CNTs along the z axis of the simulation box? [y/n]: ",
-                traj_file.args,
-                "str",
+                "Does one of the pores contain rigid CNTs? [y/n]: ", traj_file.args, "str"
             )
             if CNT_pore_question == "y":
                 if len(CNTs) == 0:
@@ -868,7 +864,7 @@ class Molecule:
         if "CNT" not in traj_file.frame0.columns:
             traj_file.frame0["CNT"] = None
 
-        # create a CNT_atoms dataframe with just the CNT atoms (value in the 'CNT' column is larger than 0.)
+        # creat a CNT_atoms dataframe with just the CNT atoms (value in the 'CNT' column is larger than 0.)
 
         CNT_atoms = traj_file.frame0[traj_file.frame0["CNT"] > 0].copy()
 
